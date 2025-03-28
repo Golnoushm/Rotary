@@ -1,4 +1,8 @@
 /////////////////////////////////////////////////////////////////
+// Rotary Code For Globe Installation 
+// Digital Future winter 2025
+// Prof: Simone Jones
+// Golnoush, Jakob, Amin 
 
 #include "Button2.h"; //  https://github.com/LennartHennigs/Button2
 #include "Rotary.h";
