@@ -1,0 +1,24 @@
+#include <Encoder.h>
+
+Encoder encoder(2, 3);  // Update pins as needed
+float encoderValue = 0.5;  // Start in the middle (0.5)
+int lastPos = 0;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int newPos = encoder.read();
+
+  if (newPos != lastPos) {
+    int delta = newPos - lastPos;
+    encoderValue += delta * 0.01;  // Change this sensitivity if needed
+    encoderValue = constrain(encoderValue, 0.0, 1.0);  // Keep between 0 and 1
+
+    Serial.println(encoderValue, 3);  // Send 3 decimal precision
+    lastPos = newPos;
+  }
+
+  delay(10);
+}
